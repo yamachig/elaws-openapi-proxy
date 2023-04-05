@@ -1,0 +1,31 @@
+{
+  "name": "elaws-openapi-proxy-lambda",
+  "version": "0.1.0",
+  "author": "yamachi",
+  "main": "./lib/main.js",
+  "scripts": {
+    "build": "pushd \"../server\" && ((npm run build && popd) || popd) && npx webpack --mode development --color --config ./webpack-configs/main.ts",
+    "build:prod": "pushd \"../server\" && ((npm run build && popd) || popd) && npx webpack --mode production --color --config ./webpack-configs/main.ts",
+    "watch": "npx webpack --watch --mode development --color --config ./webpack-configs/main.ts"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.114",
+    "elaws-openapi-proxy-server": "file:../server",
+    "serverless-http": "^3.2.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "@types/webpack": "^5.28.1",
+    "@types/webpack-node-externals": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "typescript": "^5.0.2"
+  }
+}
