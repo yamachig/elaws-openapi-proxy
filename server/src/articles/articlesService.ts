@@ -3,7 +3,7 @@ import { Articles } from "./articles";
 const elawsApiBaseUrl = "https://elaws.e-gov.go.jp/api/1";
 
 import { XMLParser, strnumOptions } from "fast-xml-parser";
-const arrayElements = ["DataRoot.ApplData.LawNameListInfo"];
+const arrayElements = ["DataRoot.ApplData.AppdxTableTitleLists.AppdxTableTitle"];
 
 const xmlParser = new XMLParser({
     ignoreDeclaration: true,
@@ -11,7 +11,7 @@ const xmlParser = new XMLParser({
         skipLike: /^[0-9]+/,
     } as strnumOptions,
     isArray: (_, jpath) => arrayElements.includes(jpath),
-    stopNodes: ["DataRoot.ApplData.AppdxTableTitleLists.AppdxTableTitle"],
+    stopNodes: ["DataRoot.ApplData.LawContents"],
 });
 
 export interface GetArticlesOptions {
