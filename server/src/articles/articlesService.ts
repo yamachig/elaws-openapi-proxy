@@ -27,7 +27,11 @@ export interface GetArticlesOptions {
 export class ArticlesService {
     public async get(options: GetArticlesOptions): Promise<Articles> {
         const startTime = new Date();
-        const optionsStr = Object.entries(options).filter(([, v]) => v !== undefined).map(([k, v]) => `;${k}=${v}`).join("");
+        const optionsStr = (
+            Object.entries(options)
+                .filter(([k, v]) => (v !== undefined) && (k !== "jsonel"))
+                .map(([k, v]) => `;${k}=${v}`).join("")
+        );
         const url = `${elawsApiBaseUrl}/articles${optionsStr}`;
         const response = await fetch(url);
         console.log(`ArticlesService.get: fetch("${url}")`);
