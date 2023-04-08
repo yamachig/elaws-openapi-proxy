@@ -30,6 +30,8 @@ const xmlParser = new XMLParser({
         skipLike: /^[0-9]+/,
     } as strnumOptions,
     preserveOrder: true,
+    ignoreAttributes: false,
+    attributeNamePrefix: "",
 });
 
 export const xmlToJsonEL = (xml: string): (JsonEL | string)[] => {
