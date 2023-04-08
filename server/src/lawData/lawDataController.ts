@@ -38,7 +38,7 @@ export class LawDataController extends Controller {
         },
     }, "Error")
     @Get("{lawid_or_lawnum}")
-    public async getLawInfo(
+    public async getLawData(
         @Path() lawid_or_lawnum: string,
     ): Promise<LawData> {
         return new LawDataService().get(lawid_or_lawnum);

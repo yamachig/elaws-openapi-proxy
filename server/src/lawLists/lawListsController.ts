@@ -47,7 +47,7 @@ export class LawListsController extends Controller {
         },
     }, "Error")
     @Get("{type}")
-    public async getLawInfo(
+    public async getLawLists(
         @Path() type: LawCategoryDummy["t"],
     ): Promise<LawLists> {
         return new LawListsService().get(type);

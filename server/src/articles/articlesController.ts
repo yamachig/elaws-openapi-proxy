@@ -45,7 +45,7 @@ export class ArticlesController extends Controller {
         },
     }, "Error")
     @Get()
-    public async getLawInfo(
+    public async getArticles(
         @Query() lawId?: string,
         @Query() lawNum?: string,
         @Query() article?: string,
