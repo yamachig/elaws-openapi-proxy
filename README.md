@@ -17,7 +17,7 @@ An OpenAPI proxy server for [e-LAWS API](https://elaws.e-gov.go.jp/apitop/) (the
 
 Be aware that this option creates resources on AWS and may incur costs.
 
-1. Prerequisites: [Node.js](https://nodejs.org/), [AWS CDK CLI](https://docs.aws.amazon.com/cdk/v2/guide/tools.html), and Active [AWS account](https://aws.amazon.com/).
+1. Prerequisites: [Node.js](https://nodejs.org/), [AWS CDK CLI](https://docs.aws.amazon.com/cdk/v2/guide/tools.html), Active [AWS account](https://aws.amazon.com/), and [Docker](https://www.docker.com/).
 2. In the `./cdk` directory, run the following commands:
     - `npm install`
     - `npm run deploy`
