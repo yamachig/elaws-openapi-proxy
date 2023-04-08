@@ -22,6 +22,7 @@ export class ArticlesController extends Controller {
      * @example article "第一条"
      * @param paragraph Paragraph ("項") to retrieve.
      * @param appdxTable AppdxTable ("別表") to retrieve.
+     * @param jsonel If set as `true`, then `ApplData.LawContents` is converted to json.
      */
     @Example<Articles>({
         Result: {
@@ -51,8 +52,9 @@ export class ArticlesController extends Controller {
         @Query() article?: string,
         @Query() paragraph?: string,
         @Query() appdxTable?: string,
+        @Query() jsonel?: boolean,
     ): Promise<Articles> {
-        return new ArticlesService().get({ lawId, lawNum, article, paragraph, appdxTable });
+        return new ArticlesService().get({ lawId, lawNum, article, paragraph, appdxTable, jsonel });
     }
 
 }

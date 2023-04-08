@@ -1,3 +1,4 @@
+import { xmlToJsonEL } from "../common";
 import { Articles } from "./articles";
 
 const elawsApiBaseUrl = "https://elaws.e-gov.go.jp/api/1";
@@ -20,6 +21,7 @@ export interface GetArticlesOptions {
     article?: string,
     paragraph?: string,
     appdxTable?: string,
+    jsonel?: boolean,
 }
 
 export class ArticlesService {
@@ -33,6 +35,9 @@ export class ArticlesService {
         const text = await response.text();
         const endRequestTime = new Date();
         const doc = xmlParser.parse(text);
+        if (options.jsonel && "ApplData" in doc.DataRoot) {
+            doc.DataRoot.ApplData.LawContents = xmlToJsonEL(doc.DataRoot.ApplData.LawContents);
+        }
         const endParseTime = new Date();
         console.log({
             requestMS: endRequestTime.getTime() - startTime.getTime(),

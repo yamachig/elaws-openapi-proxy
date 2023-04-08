@@ -1,3 +1,5 @@
+import { JsonEL } from "../common";
+
 export type Articles = {
 
     Result: {
@@ -37,8 +39,8 @@ export type Articles = {
         /** AppdxTable ("別表") specified in the request. */
         AppdxTable: string;
 
-        /** Contents in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). */
-        LawContents: string;
+        /** Contents in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). If `jsonel=true` is specified, the xml is converted to json. */
+        LawContents: string | JsonEL[];
 
         /** List of titles of AppdxTables if multiple results are detected. */
         AppdxTableTitleLists?: { AppdxTableTitle: string[] };

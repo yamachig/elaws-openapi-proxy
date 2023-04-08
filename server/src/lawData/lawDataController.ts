@@ -3,6 +3,7 @@ import {
     Example,
     Get,
     Path,
+    Query,
     Route,
     Tags,
 } from "tsoa";
@@ -18,6 +19,7 @@ export class LawDataController extends Controller {
      * @param lawid_or_lawnum Law ID ("法令ID") or LawNum ("法令番号") of law to retrieve.
      * @example lawid_or_lawnum "405AC0000000088"
      * @example lawid_or_lawnum "平成五年法律第八十八号"
+     * @param jsonel If set as `true`, then `ApplData.LawFullText` is converted to json.
      */
     @Example<LawData>({
         Result: {
@@ -40,8 +42,9 @@ export class LawDataController extends Controller {
     @Get("{lawid_or_lawnum}")
     public async getLawData(
         @Path() lawid_or_lawnum: string,
+        @Query() jsonel?: boolean,
     ): Promise<LawData> {
-        return new LawDataService().get(lawid_or_lawnum);
+        return new LawDataService().get({ lawid_or_lawnum, jsonel });
     }
 
 }

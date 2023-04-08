@@ -27,7 +27,7 @@ export type LawData = {
         /** LawNum ("法令番号") specified in the request. */
         LawNum: string;
 
-        /** Full text in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). */
+        /** Full text in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). If `jsonel=true` is specified, the xml is converted to json. */
         LawFullText: string;
 
         /** Image files referenced in `LawFullText`. Compressed as Zip and encoded in Base64. */
