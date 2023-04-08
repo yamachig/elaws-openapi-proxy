@@ -22,7 +22,7 @@ export class ArticlesController extends Controller {
      * @example article "第一条"
      * @param paragraph Paragraph ("項") to retrieve.
      * @param appdxTable AppdxTable ("別表") to retrieve.
-     * @param jsonel If set as `true`, then `ApplData.LawContents` is converted to json.
+     * @param jsonel If set as `true`, then `ApplData.LawContents` is converted to [JsonEL](https://github.com/yamachig/elaws-openapi-proxy/blob/e6d40e42/server/src/common.ts#L20).
      */
     @Example<Articles>({
         Result: {
@@ -38,7 +38,30 @@ export class ArticlesController extends Controller {
             LawContents: "<...>...</...>",
             ImageData: "...[Base64]...",
         },
-    }, "Success")
+    }, "Success with Standard Law XML")
+    @Example<Articles>({
+        Result: {
+            Code: "0",
+            Message: "",
+        },
+        ApplData: {
+            LawId: "...",
+            LawNum: "...",
+            Article: "...",
+            Paragraph: "...",
+            AppdxTable: "...",
+            LawContents: [
+                { tag: "Article", attr: {}, children: [
+                    {
+                        tag: "ArticleCaption",
+                        attr: {},
+                        children: ["..."]
+                    }
+                ] }
+            ],
+            ImageData: "...[Base64]...",
+        },
+    }, "Success with JsonEL (jsonel=true)")
     @Example<Articles>({
         Result: {
             Code: "1",
