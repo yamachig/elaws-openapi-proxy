@@ -37,7 +37,7 @@ export type UpdateLawLists = {
             /** LawNum ("法令番号") */
             LawNo: string;
 
-            /** Promulgation date ("公布日") */
+            /** Promulgation date ("公布日") in `YYYYMMDD` */
             PromulgationDate: string;
 
             LawTypeName: string;
