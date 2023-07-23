@@ -24,7 +24,7 @@ export type Articles = {
      */
     ApplData?: {
 
-        /** Law ID ("法令ID") specified in the request. */
+        /** LawID ("法令ID") specified in the request. */
         LawId: string;
 
         /** LawNum ("法令番号") specified in the request. */
@@ -39,7 +39,7 @@ export type Articles = {
         /** AppdxTable ("別表") specified in the request. */
         AppdxTable: string;
 
-        /** Contents in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). If `jsonel=true` is specified, the xml is converted to [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/). */
+        /** Contents in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). If `jsonel=true` is specified, the XML is converted to JSON which complies with [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/). */
         LawContents: string | JsonEL[];
 
         /** List of titles of AppdxTables if multiple results are detected. */

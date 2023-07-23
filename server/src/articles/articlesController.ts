@@ -14,15 +14,22 @@ import { ArticlesService } from "./articlesService";
 export class ArticlesController extends Controller {
 
     /**
-     * @summary Retrieve part of a law such as Article ("条"), Paragraph ("項"), and AppdxTable ("別表").
-     * @param lawId Law ID ("法令ID") of law to retrieve.
+     * @summary Retrieve a part of a law. You can retrieve such as Article ("条"), Paragraph ("項"), and AppdxTable ("別表"). Note: Please consider using `lawNum` if your law identifier contains non-ASCII characters.
+     * @param lawId LawID ("法令ID", e.g. "405AC0000000088") of a law to retrieve. A LawID only contains ASCII characters. Examples: "405AC0000000088", "428M60000008031", "325AC0000000131".
      * @example lawId "405AC0000000088"
-     * @param lawNum LawNum ("法令番号") of law to retrieve.
-     * @param article Article ("条") to retrieve.
+     * @example lawId "428M60000008031"
+     * @example lawId "325AC0000000131"
+     * @param lawNum LawNum ("法令番号", e.g. "平成五年法律第八十八号") of law to retrieve. Examples: "平成五年法律第八十八号", "平成二十八年総務省令第三十一号", "昭和二十五年法律第百三十一号".
+     * @example LawNum "平成五年法律第八十八号"
+     * @example LawNum "平成二十八年総務省令第三十一号"
+     * @example LawNum "昭和二十五年法律第百三十一号"
+     * @param article Article ("条") to retrieve. Examples: "第一条", "第十三条", "第百三条の四".
      * @example article "第一条"
+     * @example article "第十三条"
+     * @example article "第百三条の四"
      * @param paragraph Paragraph ("項") to retrieve.
      * @param appdxTable AppdxTable ("別表") to retrieve.
-     * @param jsonel If set as `true`, then `ApplData.LawContents` is converted to [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/).
+     * @param jsonel If set as `true`, then the XML in `ApplData.LawContents` is converted to JSON which complies with [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/).
      */
     @Example<Articles>({
         Result: {

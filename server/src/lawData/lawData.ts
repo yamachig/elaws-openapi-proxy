@@ -23,13 +23,13 @@ export type LawData = {
      */
     ApplData?: {
 
-        /** Law ID ("法令ID") specified in the request. */
+        /** LawID ("法令ID") specified in the request. */
         LawId: string;
 
         /** LawNum ("法令番号") specified in the request. */
         LawNum: string;
 
-        /** Full text in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). If `jsonel=true` is specified, the xml is converted to [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/). */
+        /** Full text in [Japanese Standard Law XML format](https://elaws.e-gov.go.jp/file/XMLSchemaForJapaneseLaw_v3.xsd). If `jsonel=true` is specified, the XML is converted to JSON which complies with [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/). */
         LawFullText: string | JsonEL[];
 
         /** Image files referenced in `LawFullText`. Compressed as Zip and encoded in Base64. */

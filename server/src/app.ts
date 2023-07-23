@@ -23,7 +23,10 @@ app.use(
 
 RegisterRoutes(app);
 
-app.get("/openapi.json", (_, res) => {
+app.get("/openapi.json", (req, res) => {
     res.type(".json");
-    res.send(JSON.stringify(openapiSpec, undefined, 2));
+    res.send(JSON.stringify({
+        ...openapiSpec,
+        servers: [{ url: req.protocol + "://" + req.get("host") + (openapiSpec.servers[0]?.url ?? "") }],
+    }, undefined, 2));
 });
