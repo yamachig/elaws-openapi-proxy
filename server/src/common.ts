@@ -1,5 +1,14 @@
 import { XMLParser, strnumOptions } from "fast-xml-parser";
 
+/**
+ * JsonEL: a tree structure that represents simplified structure of XML. A JsonEL object corresponds to an XML element. Please see the [documentation for JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/) for detail.
+ */
+export interface JsonEL {
+    tag: string;
+    attr: Record<string, string | undefined>;
+    children: (JsonEL | string)[];
+}
+
 export interface LawCategoryDummy {
     t: "1" | "2" | "3" | "4";
 }
@@ -14,15 +23,6 @@ type FXPJsonEL = ({
 }) | {
     "#text": string,
 };
-
-
-// ref: https://github.com/yamachig/Lawtext-core/blob/e57026a/src/node/el/jsonEL.ts
-export interface JsonEL {
-    tag: string
-    attr: { [key: string]: string | undefined }
-    children: Array<JsonEL | string>
-}
-
 
 const xmlParser = new XMLParser({
     ignoreDeclaration: true,

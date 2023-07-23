@@ -22,7 +22,7 @@ export class ArticlesController extends Controller {
      * @example article "第一条"
      * @param paragraph Paragraph ("項") to retrieve.
      * @param appdxTable AppdxTable ("別表") to retrieve.
-     * @param jsonel If set as `true`, then `ApplData.LawContents` is converted to [JsonEL](https://github.com/yamachig/elaws-openapi-proxy/blob/e6d40e42/server/src/common.ts#L20).
+     * @param jsonel If set as `true`, then `ApplData.LawContents` is converted to [JsonEL](https://yamachig.github.io/Lawtext/technical/intermediate-data/).
      */
     @Example<Articles>({
         Result: {
