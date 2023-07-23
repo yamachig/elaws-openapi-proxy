@@ -24,3 +24,8 @@ Be aware that this option creates resources on AWS and may incur costs.
 3. Then access \[ApiEndpoint\]/docs to open Swagger UI. You can obtain the OpenAPI spec at \[ApiEndpoint\]/openapi.json .
 
 
+# Examples
+
+See the [examples directory](./examples/) for examples.
+
+
