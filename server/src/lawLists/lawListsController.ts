@@ -50,7 +50,7 @@ export class LawListsController extends Controller {
     public async getLawLists(
         @Path() type: LawCategoryDummy["t"],
     ): Promise<LawLists> {
-        return new LawListsService().get(type);
+        return new LawListsService().get({ type });
     }
 
 }

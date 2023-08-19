@@ -56,7 +56,7 @@ export class UpdateLawListController extends Controller {
     public async getUpdateLawLists(
         @Path() date: string,
     ): Promise<UpdateLawLists> {
-        return new UpdateLawListsService().get(date);
+        return new UpdateLawListsService().get({ date });
     }
 
 }

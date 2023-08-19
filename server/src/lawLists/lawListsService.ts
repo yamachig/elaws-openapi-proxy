@@ -14,10 +14,14 @@ const xmlParser = new XMLParser({
     isArray: (_, jpath) => arrayElements.includes(jpath),
 });
 
+export interface GetLawListsOptions {
+    type: LawCategoryDummy["t"],
+}
+
 export class LawListsService {
-    public async get(type: LawCategoryDummy["t"]): Promise<LawLists> {
+    public async get(options: GetLawListsOptions): Promise<LawLists> {
         const startTime = new Date();
-        const url = `${elawsApiBaseUrl}/lawlists/${type}`;
+        const url = `${elawsApiBaseUrl}/lawlists/${options.type}`;
         console.log(`LawListService.get: fetch("${url}")`);
         const response = await fetch(url);
         // if (!response.ok) throw Error(response.statusText);

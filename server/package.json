@@ -2,7 +2,8 @@
   "name": "elaws-openapi-proxy-server",
   "version": "0.1.0",
   "author": "yamachi",
-  "main": "./lib/main.js",
+  "main": "./build/server.js",
+  "types": "./build/server.d.ts",
   "scripts": {
     "build": "npx tsoa spec-and-routes && npx tsc",
     "prepare": "npm run build",

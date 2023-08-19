@@ -13,10 +13,14 @@ const xmlParser = new XMLParser({
     isArray: (_, jpath) => arrayElements.includes(jpath),
 });
 
+export interface GetUpdateLawListsOptions {
+    date: string,
+}
+
 export class UpdateLawListsService {
-    public async get(date: string): Promise<UpdateLawLists> {
+    public async get(options: GetUpdateLawListsOptions): Promise<UpdateLawLists> {
         const startTime = new Date();
-        const url = `${elawsApiBaseUrl}/updatelawlists/${date}`;
+        const url = `${elawsApiBaseUrl}/updatelawlists/${options.date}`;
         const response = await fetch(url);
         console.log(`UpdateLawListsService.get: fetch("${url}")`);
         // if (!response.ok) throw Error(response.statusText);

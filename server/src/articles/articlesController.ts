@@ -14,7 +14,7 @@ import { ArticlesService } from "./articlesService";
 export class ArticlesController extends Controller {
 
     /**
-     * @summary Retrieve a part of a law. You can retrieve such as Article ("条"), Paragraph ("項"), and AppdxTable ("別表"). Note: Please consider using `lawNum` if your law identifier contains non-ASCII characters.
+     * @summary Retrieve a part of a law. You can retrieve such as Article ("条"), Paragraph ("項"), and AppdxTable ("別表"). Note: If your law identifier contains non-ASCII characters, please use `lawNum`, not `lawId`.
      * @param lawId LawID ("法令ID", e.g. "405AC0000000088") of a law to retrieve. A LawID only contains ASCII characters. Examples: "405AC0000000088", "428M60000008031", "325AC0000000131".
      * @example lawId "405AC0000000088"
      * @example lawId "428M60000008031"
