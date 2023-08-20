@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>elaws-openapi-proxy example usage by langchain on browser</title>
+<script>
+
+// GitHub repository: https://github.com/yamachig/elaws-openapi-proxy
+
+const init = async (options) => {
+
+    const executor = await lib.createAgentExecutor({
+        llmOptions: {
+            modelName: "gpt-4-0613",
+            temperature: 0,
+            verbose: true,
+            ...options,
+        }
+    });
+
+    window.executor = executor;
+
+};
+
+window.init = init;
+console.log(`\
+# How to use
+
+1. run the following code to initialize.
+
+    init({ openAIApiKey: "sk-*******************************" })
+
+2. run the following code to run the LLM agent executor.
+
+    executor.run("デジタル庁設置法（令和三年法律第三十六号）第一条の内容を教えてください。").then(console.log)
+`);
+
+</script>
+</head>
+<body>
+<div style="text-align: right;">
+<small><a href="https://github.com/yamachig/elaws-openapi-proxy" target="_blank" rel="noopener noreferrer">GitHub</a></small>
+</div>
+<h3>To use: Press Ctrl+Shift+J to open the console.</h3>
+</body>
+</html>

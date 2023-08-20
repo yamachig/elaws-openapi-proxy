@@ -2,10 +2,8 @@
   "name": "elaws-openapi-proxy-examples-langchain-js",
   "version": "0.0.1",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "webpack --mode=development",
+    "build:prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -16,18 +14,17 @@
     "url": "https://github.com/yamachig/elaws-openapi-proxy/issues"
   },
   "homepage": "https://github.com/yamachig/elaws-openapi-proxy#readme",
-  "dependencies": {
+  "devDependencies": {
     "debug": "^4.3.4",
     "elaws-openapi-proxy-server": "file:../../server",
+    "html-inline-script-webpack-plugin": "^3.2.1",
+    "html-webpack-plugin": "^5.5.3",
     "langchain": "^0.0.126",
-    "next": "^13.4.13",
     "openai": "^3.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "supports-color": "^9.4.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.20",
-    "typescript": "5.1.6"
+    "supports-color": "^9.4.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
