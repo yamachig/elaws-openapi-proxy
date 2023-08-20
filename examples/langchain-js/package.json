@@ -1,0 +1,33 @@
+{
+  "name": "elaws-openapi-proxy-examples-langchain-js",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamachig/elaws-openapi-proxy.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yamachig/elaws-openapi-proxy/issues"
+  },
+  "homepage": "https://github.com/yamachig/elaws-openapi-proxy#readme",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "elaws-openapi-proxy-server": "file:../../server",
+    "langchain": "^0.0.126",
+    "next": "^13.4.13",
+    "openai": "^3.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "supports-color": "^9.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.20",
+    "typescript": "5.1.6"
+  }
+}
